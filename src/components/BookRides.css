@@ -1,0 +1,80 @@
+.BookRides {
+/* background-image: url("journey.png"); */
+  /* background: lightgrey; */
+  min-height: 100%;
+  background-size: contain;
+  min-width: 100%;
+  /* background-size: cover; */
+  background-position-y: 70px;
+  position: fixed;
+}
+.RideDetails {
+  margin-left: 10px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.location-box {
+    height: 30px;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    width: 30%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 12px;
+    margin-top: 20px;
+}
+
+.google-covert{
+    border: 1px solid #ccc;
+    box-shadow: -1px 2px 4px #ccc;
+    width: 30%; 
+    margin-left: 12px;
+}
+.buttonbook {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 238, 0);
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 480px;
+  margin-top: -60px;
+  font-size: 15px;
+  /*styling of button*/
+  border-radius: 10px;
+  border-width: 0px;
+  font-family: "Segoe UI";
+  font-weight: bold;
+  box-shadow: 0 7px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.buttonbook a {
+  text-decoration: none;
+  color: white;
+}
+
+.buttonbook:hover {
+  background-color: rgba(0, 0, 0, 0.527);
+  color: rgb(255, 238, 0);
+}
+
+.buttonbook span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonbook span:after {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}

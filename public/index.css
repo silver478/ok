@@ -1,0 +1,437 @@
+* {
+  margin: 0px;
+  /* font-family: Book Antiqua; */
+}
+
+header {
+  height: 70px;
+  background-color: rgb(255, 238, 0);
+  display: flex;
+  align-items: center;
+}
+
+header > h1 {
+  font-size: 26px;
+  font-weight: bolder;
+  margin-top: 12px;
+  margin-left: 45px;
+  align-items: center;
+}
+
+@media screen and (min-width: 400px) {
+  header h1 {
+    font-size: 30px;
+    margin-left: 80px;
+  }
+}
+
+header > h1 a {
+  color: white;
+  text-decoration: none;
+  font-family: monospace;
+  text-shadow: rgb(144, 8, 8) 6px 8px 15px;
+}
+
+.buttonL {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 238, 0);
+  padding: 5px;
+  margin-left: 30px;
+  font-size: 15px;
+  /*styling of button*/
+  border-radius: 5px;
+  border-width: 0px;
+  font-family: "Segoe UI";
+  font-weight: bold;
+  box-shadow: 0 7px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.buttonL a {
+  text-decoration: none;
+  color: white;
+}
+
+/*For Desktop*/
+
+@media screen and (min-width: 400px) {
+  .buttonL {
+    margin: 5px;
+    margin-left: 800px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.buttonL:hover {
+  background-color: rgba(0, 0, 0, 0.527);
+  color: white;
+}
+/*Desktop Version*/
+
+@media screen and (min-width: 400px) {
+  .buttonL:hover span {
+    padding-right: 16px;
+    top: -1px;
+  }
+}
+
+.buttonL span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonL span:after {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+/* Desktop Version */
+
+@media screen and (min-width: 400px) {
+  .buttonL span:after {
+    content: "\00bb";
+  }
+}
+
+.buttonL:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button1 {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  margin-left: 3px;
+  font-size: 15px;
+  /*styling of button*/
+  border-radius: 5px;
+  border-width: 2px;
+  font-family: "Segoe UI";
+  font-weight: bold;
+  box-shadow: 0 7px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.button1 a {
+  text-decoration: none;
+  color: rgb(255, 238, 0);
+}
+/* Desktop Version */
+
+@media screen and (min-width: 400px) {
+  .button1 {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.button1:hover {
+  background-color: rgba(0, 0, 0, 0.527);
+  color: white;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  position: absolute;
+  opacity: 0;
+  top: -1px;
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 400px) {
+  .button1 span:after {
+    content: "\00bb";
+    top: -1px;
+  }
+}
+/* Desktop Version*/
+
+@media screen and (min-width: 400px) {
+  .button1:hover span {
+    padding-right: 16px;
+    color: white;
+  }
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*Adding hamburger button*/
+.menu-btn {
+  display: flex;
+  position: absolute;
+  margin-left: 11px;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 25px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+  border: 1px solid white;
+}
+
+@media screen and (min-width: 400px) {
+  .menu-btn {
+    margin-left: 45px;
+  }
+}
+
+.menu-btn__burger {
+  width: 20px;
+  height: 3px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-6px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(6px);
+}
+/*Adding Animation to hamburger button */
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-25px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(18px, -18px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(18px, 18px);
+}
+
+@media screen and (max-width: 400px) {
+  .item,
+  .item active img {
+    width: 100%;
+    height: 520px;
+  }
+}
+
+/* For responsiveness*/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+/* Adding the Card Hovers */
+@media screen and (min-width: 400px) {
+  .container {
+    width: 100%;
+    background: #333;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  .container .card {
+    position: relative;
+  }
+
+  .container .card .face {
+    width: 400px;
+    height: 250px;
+    transition: 0.5s;
+  }
+
+  .container .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+  }
+
+  .container .card:hover .face.face1 {
+    background: rgb(255, 238, 0);
+    /* #ff0057; */
+    transform: translateY(0);
+  }
+
+  .container .card .face.face1 .content img {
+    max-width: 100px;
+  }
+
+  .container .card .face.face1 .content h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .container .card .face.face1 .content {
+    opacity: 0.3;
+    transition: 0.5s;
+  }
+
+  .container .card:hover .face.face1 .content {
+    opacity: 1;
+  }
+
+  .container .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-150px);
+  }
+
+  .container .card:hover .face.face2 {
+    transform: translateY(0);
+  }
+
+  .container .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container .card .face.face2 .content a {
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+  }
+
+  .container .card .face.face2 .content a:hover {
+    background: #333;
+    color: #fff;
+  }
+
+  .container .card .face.face1 .content a {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container .card .face {
+    width: 320px;
+    transition: 0.5s;
+  }
+
+  .container .card .face.face1 {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    /* z-index: 1; */
+  }
+
+  .container .card:hover .face.face1 {
+    background: rgb(255, 238, 0);
+  }
+
+  /* h3 text */
+  .container .card .face.face1 .content h3 {
+    margin: 10px 0 5px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .container .card:hover .face.face1 .content h3 {
+    color: #333;
+  }
+
+  .container .card .face.face2 .content p,
+  .container .card .face.face2 .content a {
+    display: none;
+  }
+  .container .card .face.face1 .content img {
+    max-width: 100px;
+  }
+
+  /* Styling the read more button */
+  .container .card .face.face1 .content a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    padding: 2px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+  }
+
+  .container .card:hover .face.face1 .content a {
+    color: #333;
+    border: 1px solid #333;
+  }
+
+  /* Read More hover style */
+  .container .card .face.face1 .content a:hover {
+    background: #fff;
+    color: #ff0057;
+  }
+
+  /* Reduce Opacity of headings */
+  .container .card .face.face1 .content {
+    opacity: 0.3;
+    transition: 0.5s;
+  }
+
+  /* Make Headings prominent when you hover */
+  .container .card:hover .face.face1 .content {
+    opacity: 1;
+  }
+}

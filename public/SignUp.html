@@ -1,0 +1,91 @@
+<html>
+<head>
+<!-- <link href="./StylingMywork.css" type = "text/css" rel = "stylesheet"/> -->
+<title align = "center">KarShare SignUp</title>
+</head>
+
+<body>
+<style>
+body {
+	background-image: url("SignUpBG.jpg");
+    max-width: 100%;
+	background-size: cover;
+	/* align: centre; */
+}
+
+.box {
+        position: absolute;
+        top: 3%;
+        width: 400px;
+        padding: 40px;
+        background: rgba(64, 96, 146, 0.3);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+	  }
+	  
+	  
+      .box input[type="submit"] {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #03f437;
+        padding: 10px 20px;
+        cursor: pointer;
+		border-radius: 5px;
+		font-weight: 700;
+      }
+</style>
+<form autocomplete="off">
+
+
+<div class="box">
+	<!-- <legend style="color: white;">SignUp Form</legend> -->
+<h3 style="font-family: Book Antiqua ;color: white;">Personal Information</h3>
+
+<label for="firstname"style="font-family: Book Antiqua; color: black; background:rgba(255, 255, 255, 0.4); border-radius: 2px;">First Name</label><br><br></label>
+<input type="text" name="firstname" id="firstname" value="" placeholder="First Name" required=""><br><br>
+
+
+<label for="lastname" style="font-family: Book Antiqua ;color: black;  background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Last Name</label><br></br></label>
+<input type="text" name="lastname" id="lastname" placeholder="Last Name" required=""><br></br>
+
+
+<label for="male"  style="font-family: Book Antiqua ;color: black;  background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Male</label>
+<input type="radio" name="gender" value="male" id="male"><br>
+
+<label for="female"  style="font-family: Book Antiqua ;color: black;  background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Female</label>
+<input type="radio" name="gender" value="female" id="female"><br>
+
+<label for="other"  style="font-family: Book Antiqua ;color: black;  background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Other</label>
+<input type="radio" name="gender" value="other" id="other"><br></br>
+
+<label for="dateofbirth"  style="font-family: Book Antiqua ;color: black;  background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Date of Birth</label>
+<input type="date" name="dateofbirth" required=""><br></br>
+
+<label for="email"  style="font-family: Book Antiqua ;color: black; background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Email address</label><br></br>
+<input type="email" name="email" id="email" placeholder="abc@hotmail.com" required=""><br></br>
+
+
+<label for="contactnumber" style="font-family: Book Antiqua ;color: black; background:rgba(255, 255, 255, 0.4); border-radius: 2px;">Contact Number*</label><br></br>
+<!-- <select id = "myList">
+	<option value="1">0300</option>
+	<option value="2">0331</option>
+	<option value="3">0345</option>
+	<option value="4">0321</option>
+</select> -->
+<input type="numeric" name="contactnumber" placeholder="03*********"  id="contactnumber" maxlength="11" title="If you wish to share your contact detail"><br></br>
+<input type="submit" name="" value="Submit">
+
+<!-- <a href="https://www.google.com/" target = "_blank" style="color: white; text-decoration: none; font-weight: 900; font-size: small;"> -->
+</div>
+<br><br><br><br><br>
+
+
+</form>
+
+
+</head>
+</body>
+</html>
