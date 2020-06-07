@@ -22,6 +22,16 @@ function Header1() {
           <span> Book Ride </span>
         </Link>
       </button1>
+      <button1 type="button1" class="button1">
+        <Link to="/Bookings">
+          <span> View Bookings </span>
+        </Link>
+      </button1>
+      <button1 type="button1" class="button1">
+        <Link to="/myrides">
+          <span> View Your rides </span>
+        </Link>
+      </button1>
       <Logout />
     </header>
   );

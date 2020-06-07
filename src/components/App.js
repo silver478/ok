@@ -12,6 +12,8 @@ import Admin from "./Admin";
 import Bookride from "./Bookride";
 import Addimage from "./Addimage";
 import Updateprof from "./Updateprof";
+import Bookings from './Bookings';
+import Rides_Placed from './Rides_Placed'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -27,6 +29,8 @@ function App() {
           <Route path="/Bookrides" component={Bookride} />
           <Route path="/picture" component={Addimage} />
           <Route path="/update" component={Updateprof} />
+          <Route path="/Bookings" component={Bookings} />
+          <Route path="/myrides" component={Rides_Placed} />
         </Switch>
       </div>
     </Router>

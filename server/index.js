@@ -264,7 +264,95 @@ app.post("/verifytok",verifyToken,(req,res)=>{
                                             console.log(err);
                                         }
                                     })}})})
-                function verifyToken(req,res,next){
+              app.post("/addride",verifyToken,(req,res)=>{
+                let emp=req.body;
+                var sql="INSERT INTO rides(userid,userregistcarid,startlat,startlng,endlat,endlng,Starting_address,End_adrress) VALUES(?,?,?,?,?,?,?,?);"; 
+                jwt.verify(req.token,'secretkey',(err,authData)=>{
+                    if(err){
+                        res.sendStatus(403);
+
+                    } else{
+                        mysqlconnec.query(sql,[authData.user.id,emp.userregistcarid,emp.startlat,emp.startlng,emp.endlat,emp.endlng,emp.Starting_address,emp.End_adrress],(err,row,fields)=>{
+                            if(!err){
+                                res.json({row:row,authData:authData});
+                            } else{
+                                console.log(err);
+                            }
+                        })}})})
+                        app.post("/bringrides",verifyToken,(req,res)=>{
+                            let emp=req.body;
+                            var sql="SELECT * FROM rides,users WHERE rides.End_adrress=? and rides.userid=users.userid;"; 
+                            jwt.verify(req.token,'secretkey',(err,authData)=>{
+                                if(err){
+                                    res.sendStatus(403);
+            
+                                } else{
+                                    mysqlconnec.query(sql,[emp.End_adrress],(err,row,fields)=>{
+                                        if(!err){
+                                            res.send(row);
+                                        } else{
+                                            console.log(err);
+                                        }
+                                    })}})})   
+                                    app.get("/bringbookings",verifyToken,(req,res)=>{
+                                        let emp=req.body;
+                                        var sql="SELECT * FROM BOOKINGS where book_user_id=?;"; 
+                                        jwt.verify(req.token,'secretkey',(err,authData)=>{
+                                            if(err){
+                                                console.log('error')
+                                                res.sendStatus(403);
+                        
+                                            } else{
+                                                mysqlconnec.query(sql,[authData.user.id],(err,row,fields)=>{
+                                                    if(!err){
+                                                        console.log('success')
+                                                        res.send(row);
+                                                    } else{
+                                                        console.log('musqlerror')
+                                                        console.log(err);
+                                                    }
+                                                })}})})   
+            
+
+                                    app.post("/bookride",verifyToken,(req,res)=>{
+                                        let emp=req.body;
+                                        var sql="INSERT INTO Bookings(rideid,book_user_id,Starting_address,End_address,statuss,rider_name) VALUES(?,?,?,?,?,?);"; 
+                                        jwt.verify(req.token,'secretkey',(err,authData)=>{
+                                            if(err){
+                                                console.log('error')
+                                                res.sendStatus(403);
+                        
+                                            } else{
+                                                mysqlconnec.query(sql,[emp.rideid,authData.user.id,emp.Starting_address,emp.End_adrress,,emp.fullname],(err,row,fields)=>{
+                                                    if(!err){
+                                                        console.log('success')
+                                                        res.json({row:row,authData:authData});
+                                                    } else{
+                                                        console.log(err);
+                                                    }
+                                                })}})})                     
+               
+                                                app.get("/bringride",verifyToken,(req,res)=>{
+                                                    let emp=req.body;
+                                                    var sql="SELECT * FROM rides where userid=?;"; 
+                                                    jwt.verify(req.token,'secretkey',(err,authData)=>{
+                                                        if(err){
+                                                            console.log('error')
+                                                            res.sendStatus(403);
+                                    
+                                                        } else{
+                                                            mysqlconnec.query(sql,[authData.user.id],(err,row,fields)=>{
+                                                                if(!err){
+                                                                    console.log('success')
+                                                                    res.send(row);
+                                                                } else{
+                                                                    console.log('musqlerror')
+                                                                    console.log(err);
+                                                                }
+                                                            })}})})   
+                        
+               
+               function verifyToken(req,res,next){
                  const header=req.headers['authorization'];
                  if(typeof header!=='undefined'){
                      req.token=header;
@@ -273,5 +361,6 @@ app.post("/verifytok",verifyToken,(req,res)=>{
                      res.sendStatus(403);
                  }
                 }
+
         
                 

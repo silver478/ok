@@ -15,6 +15,7 @@ class Bookride extends React.Component {
     };
     this.handlechange = this.handlechange.bind(this);
     this.submithandler = this.submithandler.bind(this);
+    this.bookhandler=this.bookhandler.bind(this);
   }
   handlechange(e) {
     this.setState({
@@ -37,6 +38,24 @@ class Bookride extends React.Component {
       .then((res) => res.json())
       .then((res) => this.setState({ rides: res }));
   }
+  async bookhandler(id,start,end,name) {
+    await fetch("http://localhost:4000/bookride", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: localStorage.getItem("tok"),
+      },
+      body: JSON.stringify({
+      rideid:id,
+      Starting_address:start,
+      End_adrress:end,
+      fullname:name
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => this.props.history.push('/'));
+  }
+  
   render() {
     return (
       <div className="BookRides">
@@ -78,7 +97,7 @@ class Bookride extends React.Component {
               Rider name:{arr.fullname} &ensp;
               <br></br>
               <div>
-                <button class="buttonbook" onClick={this.submithandler}>
+                <button class="buttonbook" onClick={()=>this.bookhandler(arr.rideid,arr.Starting_address,arr.Starting_address,arr.fullname)}>
                   Book
                 </button>
               </div>
